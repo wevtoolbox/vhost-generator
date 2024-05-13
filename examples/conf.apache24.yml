@@ -87,7 +87,7 @@ vhost:
   # to prepend another subdirectory here.
   docroot:
     suffix: htdocs
-  # Array of indecies to serve as default files (e.g.: index.php, index.html, etc)
+  # Array of indexes to serve as default files (e.g.: index.php, index.html, etc)
   index:
     - index.php
     - index.html
@@ -106,7 +106,7 @@ vhost:
     # Log file settings (error/access log)
     access:
       # By default the vhost name is used for log file names.
-      # You can also prepand an additional string to the access log
+      # You can also prepend an additional string to the access log
       # as shown here:
       # <prefix><vhost>-access.log
       prefix: ''
@@ -118,7 +118,7 @@ vhost:
       stdout: no
     error:
       # By default the vhost name is used for log file names.
-      # You can also prepand an additional string to the error log
+      # You can also prepend an additional string to the error log
       # as shown here:
       # <prefix><vhost>-error.log
       prefix: ''
