@@ -210,7 +210,7 @@ The `vhost` section is the actual vhost that is being built. All placeholders (I
 
 The `features` section contains definitions of features that can be enabled or disabled (via the config file). If those features do not seem suitable, you can adjust them to better fit your needs. You can also re-arrange their position in the `vhost` section.
 
-Whenever you edit the template, make sure not to misspell any placeholders. They will not get replaced when spellt wrong.
+Whenever you edit the template, make sure not to misspell any placeholders. They will not get replaced when spelt wrong.
 
 
 Let's take for example the `features.server_status` section from Apache 2.2:
