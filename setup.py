@@ -5,23 +5,23 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setup(
-    name="vhost-gen",
+    name="vhost-generator",
     version="1.0.10",
     description="Configurable vHost generator for Apache 2.2, Apache 2.4 and Nginx.",
     license="MIT",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    author="cytopia",
-    author_email="cytopia@everythingcli.org",
-    url="https://github.com/devilbox/vhost-gen",
+    author="wevtoolbox",
+    author_email="wevtoolbox@gmail.com",
+    url="https://github.com/wevtoolbox/vhost-generator",
     install_requires=["pyyaml", "future"],
     scripts=[
-        "bin/vhost-gen"
+        "bin/vhost-generator"
     ],
        project_urls={
-        'Source Code': 'https://github.com/devilbox/vhost-gen',
-        'Documentation': 'https://devilbox.readthedocs.io/en/latest/',
-        'Bug Tracker': 'https://github.com/devilbox/vhost-gen/issues',
+        'Source Code': 'https://github.com/wevtoolbox/vhost-generator',
+        'Documentation': 'https://wevtoolbox.readthedocs.io/en/latest/',
+        'Bug Tracker': 'https://github.com/wevtoolbox/vhost-generator/issues',
     },
  classifiers=[
         # https://pypi.org/classifiers/

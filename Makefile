@@ -10,7 +10,7 @@ endif
 
 VERSION = 2.7
 BINPATH = bin/
-BINNAME = vhost-gen
+BINNAME = vhost-generator
 
 CONFIG = conf.yml
 TPLDIR = templates
@@ -58,17 +58,17 @@ _lint-version:
 	@echo "# -------------------------------------------------------------------- #"
 	@echo "# Check version config"
 	@echo "# -------------------------------------------------------------------- #"
-	@VERSION_VHOSTGEN=$$( grep -E '^VERSION = "v?[.0-9]+(-\w+)?"' $(BINPATH)$(BINNAME) | awk -F'"' '{print $$2}' || true ); \
+	@VERSION_VHOSTGENERATOR=$$( grep -E '^VERSION = "v?[.0-9]+(-\w+)?"' $(BINPATH)$(BINNAME) | awk -F'"' '{print $$2}' || true ); \
 	VERSION_SETUP=$$( grep version= setup.py | awk -F'"' '{print $$2}' || true ); \
-	if [ "$${VERSION_VHOSTGEN}" != "$${VERSION_SETUP}" ]; then \
+	if [ "$${VERSION_VHOSTGENERATOR}" != "$${VERSION_SETUP}" ]; then \
 		echo "[ERROR] Version mismatch"; \
-		echo "bin/vhost-gen:  $${VERSION_VHOSTGEN}"; \
-		echo "setup.py:       $${VERSION_SETUP}"; \
+		echo "bin/vhost-generator:  $${VERSION_VHOSTGENERATOR}"; \
+		echo "setup.py:             $${VERSION_SETUP}"; \
 		exit 1; \
 	else \
 		echo "[OK] Version match"; \
-		echo "bin/vhost-gen: $${VERSION_VHOSTGEN}"; \
-		echo "setup.py:      $${VERSION_SETUP}"; \
+		echo "bin/vhost-generator: $${VERSION_VHOSTGENERATOR}"; \
+		echo "setup.py:            $${VERSION_SETUP}"; \
 		exit 0; \
 	fi \
 
@@ -231,13 +231,13 @@ install:
 	@echo "Installing files"
 	@echo ""
 	@# Create directories
-	mkdir -p /etc/vhost-gen
-	mkdir -p /etc/vhost-gen/templates
+	mkdir -p /etc/vhost-generator
+	mkdir -p /etc/vhost-generator/templates
 	@# Install binary
 	install -m 0755 $(BINPATH)/$(BINNAME) /usr/bin/$(BINNAME)
 	@# Install configs
-	install -m 0644 etc/$(CONFIG) /etc/vhost-gen/$(CONFIG)
-	install -m 0644 etc/$(TPLDIR)/*.yml /etc/vhost-gen/$(TPLDIR)
+	install -m 0644 etc/$(CONFIG) /etc/vhost-generator/$(CONFIG)
+	install -m 0644 etc/$(TPLDIR)/*.yml /etc/vhost-generator/$(TPLDIR)
 	@echo "Installation complete:"
 	@echo "----------------------------------------------------------------------"
 	@echo ""
@@ -245,7 +245,7 @@ install:
 uninstall:
 	@echo "Removing files"
 	@echo ""
-	rm -r /etc/vhost-gen
+	rm -r /etc/vhost-generator
 	rm /usr/bin/$(BINNAME)
 	@echo "Uninstallation complete:"
 	@echo "----------------------------------------------------------------------"

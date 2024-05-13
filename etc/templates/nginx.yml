@@ -1,6 +1,6 @@
 ---
 
-# Nginx vHost Template defintion for vhost-gen.py
+# Nginx vHost Template definition for vhost-generator.py
 #
 # The 'feature' section contains optional features that can be enabled via
 # conf.yml and will then be replaced into the main vhost ('structure' section)

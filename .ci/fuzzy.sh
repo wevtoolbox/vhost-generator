@@ -43,14 +43,14 @@ function fuzzy() {
 		###
 		### 1 Argument
 		###
-		cmd="${MY_PATH}/../bin/vhost-gen -${arg1} ${val1}"
+		cmd="${MY_PATH}/../bin/vhost-generator -${arg1} ${val1}"
 		out="$( eval "${cmd}" 2>&1 || true )"
 		if errored "${out}"; then
 			printf "[%04d] %s\n" "${count}" "${cmd}"
 			echo "${out}"
 			exit 1
 		fi
-		cmd="${MY_PATH}/../bin/vhost-gen -p ${val1}"
+		cmd="${MY_PATH}/../bin/vhost-generator -p ${val1}"
 		out="$( eval "${cmd}" 2>&1 || true )"
 		if errored "${out}"; then
 			printf "[%04d] %s\n" "${count}" "${cmd}"
@@ -61,14 +61,14 @@ function fuzzy() {
 		###
 		### 2 Arguments
 		###
-		cmd="${MY_PATH}/../bin/vhost-gen -${arg1} ${val1} -${arg2} ${val2}"
+		cmd="${MY_PATH}/../bin/vhost-generator -${arg1} ${val1} -${arg2} ${val2}"
 		out="$( eval "${cmd}" 2>&1 || true )"
 		if errored "${out}"; then
 			printf "[%04d] %s\n" "${count}" "${cmd}"
 			echo "${out}"
 			exit 1
 		fi
-		cmd="${MY_PATH}/../bin/vhost-gen -p ${val1} -n NAME"
+		cmd="${MY_PATH}/../bin/vhost-generator -p ${val1} -n NAME"
 		out="$( eval "${cmd}" 2>&1 || true )"
 		if errored "${out}"; then
 			printf "[%04d] %s\n" "${count}" "${cmd}"
@@ -79,14 +79,14 @@ function fuzzy() {
 		###
 		### 3 Arguments
 		###
-		cmd="${MY_PATH}/../bin/vhost-gen -${arg1} ${val1} -${arg2} ${val2} -${arg3} ${val3}"
+		cmd="${MY_PATH}/../bin/vhost-generator -${arg1} ${val1} -${arg2} ${val2} -${arg3} ${val3}"
 		out="$( eval "${cmd}" 2>&1 || true )"
 		if errored "${out}"; then
 			printf "[%04d] %s\n" "${count}" "${cmd}"
 			echo "${out}"
 			exit 1
 		fi
-		cmd="${MY_PATH}/../bin/vhost-gen -p ${val1} -n NAME -${arg3} ${val3}"
+		cmd="${MY_PATH}/../bin/vhost-generator -p ${val1} -n NAME -${arg3} ${val3}"
 		out="$( eval "${cmd}" 2>&1 || true )"
 		if errored "${out}"; then
 			printf "[%04d] %s\n" "${count}" "${cmd}"
@@ -97,14 +97,14 @@ function fuzzy() {
 		###
 		### 4 Arguments
 		###
-		cmd="${MY_PATH}/../bin/vhost-gen -${arg1} ${val1} -${arg2} ${val2} -${arg3} ${val3} -${arg4} ${val4}"
+		cmd="${MY_PATH}/../bin/vhost-generator -${arg1} ${val1} -${arg2} ${val2} -${arg3} ${val3} -${arg4} ${val4}"
 		out="$( eval "${cmd}" 2>&1 || true )"
 		if errored "${out}"; then
 			printf "[%04d] %s\n" "${count}" "${cmd}"
 			echo "${out}"
 			exit 1
 		fi
-		cmd="${MY_PATH}/../bin/vhost-gen -p ${val1} -n NAME -${arg3} ${val3} -${arg4} ${val4}"
+		cmd="${MY_PATH}/../bin/vhost-generator -p ${val1} -n NAME -${arg3} ${val3} -${arg4} ${val4}"
 		out="$( eval "${cmd}" 2>&1 || true )"
 		if errored "${out}"; then
 			printf "[%04d] %s\n" "${count}" "${cmd}"
@@ -115,14 +115,14 @@ function fuzzy() {
 		###
 		### 5 Arguments
 		###
-		cmd="${MY_PATH}/../bin/vhost-gen -${arg1} ${val1} -${arg2} ${val2} -${arg3} ${val3} -${arg4} ${val4}  -${arg5} ${val5}"
+		cmd="${MY_PATH}/../bin/vhost-generator -${arg1} ${val1} -${arg2} ${val2} -${arg3} ${val3} -${arg4} ${val4}  -${arg5} ${val5}"
 		out="$( eval "${cmd}" 2>&1 || true )"
 		if errored "${out}"; then
 			printf "[%04d] %s\n" "${count}" "${cmd}"
 			echo "${out}"
 			exit 1
 		fi
-		cmd="${MY_PATH}/../bin/vhost-gen -p ${val1} -n NAME -${arg3} ${val3} -${arg4} ${val4}  -${arg5} ${val5}"
+		cmd="${MY_PATH}/../bin/vhost-generator -p ${val1} -n NAME -${arg3} ${val3} -${arg4} ${val4}  -${arg5} ${val5}"
 		out="$( eval "${cmd}" 2>&1 || true )"
 		if errored "${out}"; then
 			printf "[%04d] %s\n" "${count}" "${cmd}"
@@ -137,12 +137,12 @@ function fuzzy() {
 ### Round 1 (Supported Options only)
 ###
 declare -a args=(c p n t s o)
-declare -a vals="(./ ./etc ./etc/conf.yml ./examples/conf.nginx.yml ./examples/conf.apache22.yml ./examples/conf.apache24.yml ./etc/templates ../ ../etc ../etc/conf.yml ../examples/conf.nginx.yml ../examples/conf.apache22.yml ../examples/conf.apache24.yml ../etc/templates ../../ ../../etc ../../etc/conf.yml ../../examples/conf.nginx.yml ../../examples/conf.apache22.yml ../../examples/conf.apache24.yml ../../etc/templates /etc /etc/vhost-gen /etc/vhost-gen/conf.yml /etc/vhost-gen/templates)"
+declare -a vals="(./ ./etc ./etc/conf.yml ./examples/conf.nginx.yml ./examples/conf.apache22.yml ./examples/conf.apache24.yml ./etc/templates ../ ../etc ../etc/conf.yml ../examples/conf.nginx.yml ../examples/conf.apache22.yml ../examples/conf.apache24.yml ../etc/templates ../../ ../../etc ../../etc/conf.yml ../../examples/conf.nginx.yml ../../examples/conf.apache22.yml ../../examples/conf.apache24.yml ../../etc/templates /etc /etc/vhost-generator /etc/vhost-generator/conf.yml /etc/vhost-generator/templates)"
 fuzzy
 
 ###
 ### Round 2 (Any Options)
 ###
 declare -a args="(a b c d e f g h i j k l m n o p q r s t u v w x y z 0 1 2 3 4 5 6 7 8 9)"
-declare -a vals="(c p n t -c -p -n -t -h -v ./ ./etc ./etc/conf.yml ./examples/conf.nginx.yml ./examples/conf.apache22.yml ./examples/conf.apache24.yml ./etc/templates ../ ../etc ../etc/conf.yml ../examples/conf.nginx.yml ../examples/conf.apache22.yml ../examples/conf.apache24.yml ../etc/templates ../../ ../../etc ../../etc/conf.yml ../../examples/conf.nginx.yml ../../examples/conf.apache22.yml ../../examples/conf.apache24.yml ../../etc/templates /etc /etc/vhost-gen /etc/vhost-gen/conf.yml /etc/vhost-gen/templates)"
+declare -a vals="(c p n t -c -p -n -t -h -v ./ ./etc ./etc/conf.yml ./examples/conf.nginx.yml ./examples/conf.apache22.yml ./examples/conf.apache24.yml ./etc/templates ../ ../etc ../etc/conf.yml ../examples/conf.nginx.yml ../examples/conf.apache22.yml ../examples/conf.apache24.yml ../etc/templates ../../ ../../etc ../../etc/conf.yml ../../examples/conf.nginx.yml ../../examples/conf.apache22.yml ../../examples/conf.apache24.yml ../../etc/templates /etc /etc/vhost-generator /etc/vhost-generator/conf.yml /etc/vhost-generator/templates)"
 fuzzy

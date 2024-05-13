@@ -1,27 +1,27 @@
-# vhost-gen
+# vhost-generator
 
 [![](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
-[![PyPI](https://img.shields.io/pypi/v/vhost-gen)](https://pypi.org/project/vhost-gen/)
-[![PyPI - Status](https://img.shields.io/pypi/status/vhost-gen)](https://pypi.org/project/vhost-gen/)
-[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/vhost-gen)](https://pypi.org/project/vhost-gen/)
-[![PyPI - Format](https://img.shields.io/pypi/format/vhost-gen)](https://pypi.org/project/vhost-gen/)
-[![PyPI - Implementation](https://img.shields.io/pypi/implementation/vhost-gen)](https://pypi.org/project/vhost-gen/)
-[![PyPI - License](https://img.shields.io/pypi/l/vhost-gen)](https://pypi.org/project/vhost-gen/)
+[![PyPI](https://img.shields.io/pypi/v/vhost-generator)](https://pypi.org/project/vhost-generator/)
+[![PyPI - Status](https://img.shields.io/pypi/status/vhost-generator)](https://pypi.org/project/vhost-generator/)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/vhost-generator)](https://pypi.org/project/vhost-generator/)
+[![PyPI - Format](https://img.shields.io/pypi/format/vhost-generator)](https://pypi.org/project/vhost-generator/)
+[![PyPI - Implementation](https://img.shields.io/pypi/implementation/vhost-generator)](https://pypi.org/project/vhost-generator/)
+[![PyPI - License](https://img.shields.io/pypi/l/vhost-generator)](https://pypi.org/project/vhost-generator/)
 
 **Continuous Integration**
 
-[![testing](https://github.com/devilbox/vhost-gen/workflows/testing/badge.svg)](https://github.com/devilbox/vhost-gen/actions?query=workflow%3Atesting)
-[![fuzzing](https://github.com/devilbox/vhost-gen/workflows/fuzzing/badge.svg)](https://github.com/devilbox/vhost-gen/actions?query=workflow%3Afuzzing)
+[![testing](https://github.com/wevtoolbox/vhost-generator/workflows/testing/badge.svg)](https://github.com/wevtoolbox/vhost-generator/actions?query=workflow%3Atesting)
+[![fuzzing](https://github.com/wevtoolbox/vhost-generator/workflows/fuzzing/badge.svg)](https://github.com/wevtoolbox/vhost-generator/actions?query=workflow%3Afuzzing)
 
-[![linting](https://github.com/devilbox/vhost-gen/workflows/linting/badge.svg)](https://github.com/devilbox/vhost-gen/actions?query=workflow%3Alinting)
-[![pylint](https://github.com/devilbox/vhost-gen/workflows/pylint/badge.svg)](https://github.com/devilbox/vhost-gen/actions?query=workflow%3Apylint)
-[![black](https://github.com/devilbox/vhost-gen/workflows/black/badge.svg)](https://github.com/devilbox/vhost-gen/actions?query=workflow%3Ablack)
-[![mypy](https://github.com/devilbox/vhost-gen/workflows/mypy/badge.svg)](https://github.com/devilbox/vhost-gen/actions?query=workflow%3Amypy)
-[![pycode](https://github.com/devilbox/vhost-gen/workflows/pycode/badge.svg)](https://github.com/devilbox/vhost-gen/actions?query=workflow%3Apycode)
-[![pydoc](https://github.com/devilbox/vhost-gen/workflows/pydoc/badge.svg)](https://github.com/devilbox/vhost-gen/actions?query=workflow%3Apydoc)
+[![linting](https://github.com/wevtoolbox/vhost-generator/workflows/linting/badge.svg)](https://github.com/wevtoolbox/vhost-generator/actions?query=workflow%3Alinting)
+[![pylint](https://github.com/wevtoolbox/vhost-generator/workflows/pylint/badge.svg)](https://github.com/wevtoolbox/vhost-generator/actions?query=workflow%3Apylint)
+[![black](https://github.com/wevtoolbox/vhost-generator/workflows/black/badge.svg)](https://github.com/wevtoolbox/vhost-generator/actions?query=workflow%3Ablack)
+[![mypy](https://github.com/wevtoolbox/vhost-generator/workflows/mypy/badge.svg)](https://github.com/wevtoolbox/vhost-generator/actions?query=workflow%3Amypy)
+[![pycode](https://github.com/wevtoolbox/vhost-generator/workflows/pycode/badge.svg)](https://github.com/wevtoolbox/vhost-generator/actions?query=workflow%3Apycode)
+[![pydoc](https://github.com/wevtoolbox/vhost-generator/workflows/pydoc/badge.svg)](https://github.com/wevtoolbox/vhost-generator/actions?query=workflow%3Apydoc)
 
 
-**[vhost-gen](bin/vhost-gen)** will dynamically generate **vhost** or **reverse proxy** (with or without **websocket support**) configuration files for Apache 2.2, Apache 2.4 and Nginx depending on what you have set in [conf.yml](etc/conf.yml). This makes it easy to switch between different web servers while keeping the exact same functionality.
+**[vhost-generator](bin/vhost-generator)** will dynamically generate **vhost** or **reverse proxy** (with or without **websocket support**) configuration files for Apache 2.2, Apache 2.4 and Nginx depending on what you have set in [conf.yml](etc/conf.yml). This makes it easy to switch between different web servers while keeping the exact same functionality.
 
 ---
 
@@ -29,34 +29,34 @@
 
 #### Via pip
 ```bash
-pip install vhost-gen
+pip install vhost-generator
 ```
 
 #### From git
 **Note:** When using the Makefile, ensure that `pyyaml` is installed (`pip install pyyaml`).
 ```bash
-git clone https://github.com/devilbox/vhost-gen
-cd vhost-gen
+git clone https://github.com/wevtoolbox/vhost-generator
+cd vhost-generator
 sudo make install
 ```
 
 
 ## What is all the fuzz?
 
-Imagine you have to create virtual hosts for your web server over and over again. The only things that might change are document root, log files and server names and possibly some other minor changes. Instead of having to copy and adjust the server's vhost config file each time, you can use `vhost-gen` to generate them for you. By supporting different web server versions, it makes it also easy for you to switch back and forth between Apache 2.2, Apache 2.4 and Nginx.
+Imagine you have to create virtual hosts for your web server over and over again. The only things that might change are document root, log files and server names and possibly some other minor changes. Instead of having to copy and adjust the server's vhost config file each time, you can use `vhost-generator` to generate them for you. By supporting different web server versions, it makes it also easy for you to switch back and forth between Apache 2.2, Apache 2.4 and Nginx.
 
 ```bash
 # vHost
-$ vhost-gen -p /shared/httpd/www.example.com -n www.example.com
+$ vhost-generator -p /shared/httpd/www.example.com -n www.example.com
 # Reverse Proxy
-$ vhost-gen -r http://127.0.0.1:8080 -l / -n api.example.com
+$ vhost-generator -r http://127.0.0.1:8080 -l / -n api.example.com
 ```
 
-**`vhost-gen`** alone simply creates a new virtual host every time you execute it. The goal however is to also automate the execution of the vhost generator itself.
+**`vhost-generator`** alone simply creates a new virtual host every time you execute it. The goal however is to also automate the execution of the vhost generator itself.
 
-#### 1. Reverse Proxy automation: [watcherp](https://github.com/devilbox/watcherp)
+#### 1. Reverse Proxy automation: [watcherp](https://github.com/wevtoolbox/watcherp)
 
-Here enters **[watcherp](https://github.com/devilbox/watcherp)** the game. **[watcherp](https://github.com/devilbox/watcherp)** listens for changes of port bindings and triggers a command whenever a new port has been bound or a binding has been removed. By combining these two tools, you could automate the creating of reverse proxies with one command:
+Here enters **[watcherp](https://github.com/wevtoolbox/watcherp)** the game. **[watcherp](https://github.com/wevtoolbox/watcherp)** listens for changes of port bindings and triggers a command whenever a new port has been bound or a binding has been removed. By combining these two tools, you could automate the creating of reverse proxies with one command:
 
 ```bash
 # %n will be replaced by watcherp with the address a port has binded
@@ -64,44 +64,44 @@ Here enters **[watcherp](https://github.com/devilbox/watcherp)** the game. **[wa
 # -p argument from watcherp specifies ports to ignore for changes
 $ watcherp -v \
   -p 80,443 \
-  -a "vhost-gen -r 'http://%n:%p' -l '/' -n '%n.example.com' -s" \
+  -a "vhost-generator -r 'http://%n:%p' -l '/' -n '%n.example.com' -s" \
   -d "rm /etc/nginx/conf.d/%n.example.com.conf" \
   -t "nginx -s reload"
 ```
 
-#### 2. Virtual Host automation: [watcherd](https://github.com/devilbox/watcherd)
+#### 2. Virtual Host automation: [watcherd](https://github.com/wevtoolbox/watcherd)
 
-Here enters **[watcherd](https://github.com/devilbox/watcherd)** the game. **[watcherd](https://github.com/devilbox/watcherd)** listens for directory changes and triggers a command whenever a directory has been created or deleted. By combining these two tools, you could automate mass virtual hosting with one command:
+Here enters **[watcherd](https://github.com/wevtoolbox/watcherd)** the game. **[watcherd](https://github.com/wevtoolbox/watcherd)** listens for directory changes and triggers a command whenever a directory has been created or deleted. By combining these two tools, you could automate mass virtual hosting with one command:
 
 ```bash
 # %n will be replaced by watcherd with the new directory name
 # %p will be replaced by watcherd with the new directory path
 $ watcherd -v \
   -p /shared/httpd \
-  -a "vhost-gen -p %p -n %n -s" \
+  -a "vhost-generator -p %p -n %n -s" \
   -d "rm /etc/nginx/conf.d/%n.conf" \
   -t "nginx -s reload"
 ```
 
 ##### More customization
 
-Now it might look much more interesting. With the above command every vhost will have the exact same definition (except server name, document root and log file names). It is however also possible that every vhost could be customized depending on their needs. **`vhost-gen`** allows for additional overwriting its template. So inside each newly created folder you could have a sub-directory (e.g. `templates/`) with folder specific defines. Those custom templates would only be sourced if they exist:
+Now it might look much more interesting. With the above command every vhost will have the exact same definition (except server name, document root and log file names). It is however also possible that every vhost could be customized depending on their needs. **`vhost-generator`** allows for additional overwriting its template. So inside each newly created folder you could have a sub-directory (e.g. `templates/`) with folder specific defines. Those custom templates would only be sourced if they exist:
 
 ```bash
 # Note: Adding -o %p/templates
 $ watcherd -v \
   -p /shared/httpd \
-  -a "vhost-gen -p %p -n %n -o %p/templates -s" \
+  -a "vhost-generator -p %p -n %n -o %p/templates -s" \
   -d "rm /etc/nginx/conf.d/%n.conf" \
   -t "nginx -s reload"
 ```
 
 ##### Making it robust
 
-If you don't trust the stability of **[watcherd](https://github.com/devilbox/watcherd)** or want other means of controlling this daemon, you can utilize **[supervisord](http://supervisord.org/)**:
+If you don't trust the stability of **[watcherd](https://github.com/wevtoolbox/watcherd)** or want other means of controlling this daemon, you can utilize **[supervisord](http://supervisord.org/)**:
 ```ini
 [program:watcherd]
-command=watcherd -v -p /shared/httpd -a "vhost-gen -p %%p -n %%n -s" -d "rm /etc/nginx/custom.d/%%n.conf" -t "nginx -s reload"
+command=watcherd -v -p /shared/httpd -a "vhost-generator -p %%p -n %%n -s" -d "rm /etc/nginx/custom.d/%%n.conf" -t "nginx -s reload"
 startsecs = 0
 autorestart = true
 stdout_logfile=/dev/stdout
@@ -114,14 +114,14 @@ stderr_events_enabled=true
 
 #### 3. Dockerizing
 
-If you don't want to implement it yourself, there are already four fully functional dockerized containers available that offer automated mass virtual hosting based on `vhost-gen` and `watcherd`:
+If you don't want to implement it yourself, there are already four fully functional dockerized containers available that offer automated mass virtual hosting based on `vhost-generator` and `watcherd`:
 
-| Base Image | Web server | Repository |
-|------------|------------|------------|
-| Nginx stable (official) | nginx | https://github.com/devilbox/docker-nginx-stable |
-| Nginx mainline (official) | nginx | https://github.com/devilbox/docker-nginx-mainline |
-| Apache 2.2 (official) | Apache 2.2 | https://github.com/devilbox/docker-apache-2.2 |
-| Apache 2.4 (official) | Apache 2.4 | https://github.com/devilbox/docker-apache-2.4 |
+| Base Image                | Web server | Repository                                          |
+|---------------------------|------------|-----------------------------------------------------|
+| Nginx stable (official)   | nginx      | https://github.com/wevtoolbox/docker-nginx-stable   |
+| Nginx mainline (official) | nginx      | https://github.com/wevtoolbox/docker-nginx-mainline |
+| Apache 2.2 (official)     | Apache 2.2 | https://github.com/wevtoolbox/docker-apache-2.2     |
+| Apache 2.4 (official)     | Apache 2.4 | https://github.com/wevtoolbox/docker-apache-2.4     |
 
 
 ## Insights
@@ -157,17 +157,17 @@ If you are not satisfied with the default definitions for the webserver configur
 * vHost name is specified as a command line argument
 * vHost templates for major webservers are defined in etc/templates
 * vHost templates contain variables that must be replaced
-* Webserver type/version is defined in /etc/vhost-gen/conf.yml
-* Variable replacer are defined in /etc/vhost-gen/conf.yml
+* Webserver type/version is defined in /etc/vhost-generator/conf.yml
+* Variable replacer are defined in /etc/vhost-generator/conf.yml
 * Additional variable replacer can also be defined (`-o`)
 
 **The following describes the program flow:**
 
-1. [vhost-gen](bin/vhost-gen) will read /etc/vhost-gen/conf.yml to get defines and webserver type/version
+1. [vhost-generator](bin/vhost-generator) will read /etc/vhost-generator/conf.yml to get defines and webserver type/version
 2. Base on the webserver version/type, it will read etc/templates/<HTTPD_VERSION>.yml template
 3. Variables in the chosen template are replaced
 4. The vHost name (`-n`) is also placed into the template
-5. Template is written to webserver's config location (defined in /etc/vhost-gen/conf.yml)
+5. Template is written to webserver's config location (defined in /etc/vhost-generator/conf.yml)
 
 
 ## Usage
@@ -238,13 +238,13 @@ If you are not satisfied with the `Allow from all` permissions, simply rewrite t
 #### Available command line options
 
 ```bash
-Usage: vhost-gen -p|r <str> -n <str> [-l <str> -c <str> -t <str> -o <str> -d -s -v]
-       vhost-gen --help
-       vhost-gen --version
+Usage: vhost-generator -p|r <str> -n <str> [-l <str> -c <str> -t <str> -o <str> -d -s -v]
+       vhost-generator --help
+       vhost-generator --version
 
-vhost-gen will dynamically generate vhost configuration files
+vhost-generator will dynamically generate vhost configuration files
 for Nginx, Apache 2.2 or Apache 2.4 depending on what you have set
-in /etc/vhost-gen/conf.yml
+in /etc/vhost-generator/conf.yml
 
 Required arguments:
   -p|r <str>  You need to choose one of the mutually exclusive arguments.
@@ -267,10 +267,10 @@ Optional arguments:
               -m both:  Generate http and https version
               -m redir: Generate https version and make http redirect to https
   -c <str>    Path to global configuration file.
-              If not set, the default location is /etc/vhost-gen/conf.yml
+              If not set, the default location is /etc/vhost-generator/conf.yml
               If no config is found, a default is used with all features turned off.
   -t <str>    Path to global vhost template directory.
-              If not set, the default location is /etc/vhost-gen/templates/
+              If not set, the default location is /etc/vhost-generator/templates/
               If vhost template files are not found in this directory, the program will
               abort.
   -o <str>    Path to local override vhost template directory.
@@ -302,8 +302,10 @@ This is an open source project and done in spare time. If you want to help out y
 * Whatever else you can imagine of
 
 
-## License
+## 📄 License
 
 **[MIT License](LICENSE.md)**
 
-Copyright (c) 2017 [cytopia](https://github.com/cytopia)
+Copyright (c) 2017 **[cytopia](https://github.com/cytopia)**
+
+Copyright (c) 2024 **[bogny](https://github.com/bogny)**
